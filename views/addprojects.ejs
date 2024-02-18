@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+
+            <li style = "margin-right: 35px;"><a href="/listprojects" style = "text-decoration: none;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Project List</a></li>
+        </ul>
+    </div><br>
+    <form action="/addprojects_submit" method="post">
+        <table style="width:500px;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));padding: 40px;color:white;font-family: arial;">
+            <tr>
+                <td>Project Name</td>
+                <td><input type="text" name="project_name" value="<%= result.project_name %>"></td>
+            </tr>
+
+
+            <tr>
+                <td>Project Brief</td>
+                <td><input type="text" name="project_description" value="<%= result.project_description %>"></td>
+            </tr>
+
+            <tr>
+                <td>Languages Used</td>
+                <td><input type="text" name="languages_used" value="<%= result.languages_used %>"></td>
+            </tr>
+
+            <tr>
+                <td>Project Logo</td>
+                <td><input type="text" name="project_logo" value="<%= result.project_logo %>"></td>
+            </tr>
+
+
+            
+            <tr>
+                <td>Project Description</td>
+                <td><input type="text" name="project_description_l" value="<%= result.project_description_l %>"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

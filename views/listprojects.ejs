@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+            <li style = "margin-right: 35px;"><a href="/addprojects" style = "text-decoration: none;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Add Project</a></li>
+        </ul>
+    </div><br>
+
+    <div style="width:1300px;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));color:white;">
+        <table align="center" border="1" cellspacing="5" style="font-family: arial;padding: 35px;">
+            <tr>
+                <td>Project Id</td>
+                <td>Project Name</td>
+                <td>Project Brief</td>
+                <td>Languages Used</td>
+                <td>Project Logo</td>
+                <td>Project Description</td>
+
+                <td>Action</td>
+            </tr>
+                <% for(var i = 0; i < result.length; i++) { %>
+                    <tr>
+                        <td><%= result[i].project_id %></td>
+                        <td><%= result[i].project_name %></td>
+                        <td><%= result[i].project_description %></td>
+                        <td><%= result[i].languages_used %></td>
+                        <td><%= result[i].project_logo %></td>
+                        <td><%= result[i].project_description_l %></td>
+
+                        <td>
+                            <a href="/editproject?project_id=<%= result[i].project_id %>" style="color: white;">Edit</a>
+                            <a href="/deleteproject?project_id=<%= result[i].project_id %>" style="color: white;">Delete</a>
+                            
+                        </td>
+                    </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+</html>

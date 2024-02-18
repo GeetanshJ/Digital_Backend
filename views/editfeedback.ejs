@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+</head>
+<body style="margin: 0; padding: 0;">
+    <div style="background: linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962)); display: flex; align-items: baseline; justify-content: space-between;">
+        <ul style="display: flex; justify-content: space-between; align-items: baseline; text-decoration: none; color: white; flex-direction: row;  list-style-type: none;">
+            <li style="margin-right: 35px;"><a href="/" style="text-decoration: none; color: white; font-size: 17px; font-family: arial; font-weight: 700;">Home</a></li>
+        </ul>
+    </div><br>
+
+    <div style="width: 800px; margin: 0 auto; background: linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962)); color: white;">
+        <form action="/editfeedback_submit" method="post">
+            <table style="width:500px;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));padding: 40px;color:white;font-family: arial;">
+                <input type="hidden" name="client_id" value="<%= feedbackdata.client_id %>">
+
+                <tr>
+                    <td>Client Name</td>
+                    <td><input type="text" name="client_name" value="<%= feedbackdata.client_name %>"></td>
+                </tr>
+    
+                <tr>
+                    <td>Creativity</td>
+                    <td><input type="number" name="creativity" value="<%= feedbackdata.creativity %>"></td>
+                </tr>
+    
+                <tr>
+                    <td>Designing</td>
+                    <td><input type="number" name="designing" value="<%= feedbackdata.designing %>"></td>
+                </tr>
+
+                <tr>
+                    <td>Team Work</td>
+                    <td><input type="number" name="team_work" value="<%= feedbackdata.team_work %>"></td>
+                </tr>
+
+                <tr>
+                    <td>Feedback</td>
+                    <td><input type="text" name="feedback" value="<%= feedbackdata.feedback %>"></td>
+                </tr>
+    
+                <tr>
+                    <td>Services Used</td>
+                    <td>
+                        <select name="service_id">
+                            <% for(let i = 0; i < serviceS.length; i++){ %>
+                                <option value="<%= serviceS[i].service_id %>"><%= serviceS[i].service_name %></option>
+                            <% } %>
+                        </select>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

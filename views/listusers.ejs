@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+
+            <li style = "margin-right: 35px;"><a href="/addusers" style = "text-decoration: none;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Add Users</a></li>
+        </ul>
+    </div><br>
+
+    <div style="width:100%;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));color:white;">
+        <table align="center" border="1" cellspacing="5" style="font-family: arial;padding: 35px;">
+            <tr>
+                <td>User Id</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Date of Registration</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Phone Number</td>
+                <td>Action</td>
+
+            </tr>
+            <% if (result && result.length) { %>
+                <% for(var i = 0; i < result.length; i++) { %>
+                    <tr>
+                        <td><%= result[i].user_id %></td>
+                        <td><%= result[i].email %></td>
+                        <td><%= result[i].password %></td>
+                        <td><%= result[i].dor %></td>
+                        <td><%= result[i].first_name %></td>
+                        <td><%= result[i].last_name %></td>
+                        <td><%= result[i].phone %></td>
+
+                        <td>
+                            <a href="/editusers?user_id=<%= result[i].user_id %>" style="color: white;">Edit</a>
+                            <a href="/deleteusers?user_id=<%= result[i].user_id %>" style="color: white;">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4">No data available</td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+</html>

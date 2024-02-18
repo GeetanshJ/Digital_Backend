@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+            <li style = "margin-right: 35px;"><a href="/addfacts" style = "text-decoration: none;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Add Fact</a></li>
+        </ul>
+    </div><br>
+
+    <div style="width:1300px;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));color:white;">
+        <table align="center" border="1" cellspacing="5" style="font-family: arial;padding: 35px;">
+            <tr>
+                <td>Fact Id</td>
+                <td>Fact Name</td>
+                <td>Fact Brief</td>
+                <td>Fact Logo</td>
+                <td>Fact Description</td>
+
+                <td>Action</td>
+            </tr>
+                <% for(var i = 0; i < result.length; i++) { %>
+                    <tr>
+                        <td><%= result[i].fact_id %></td>
+                        <td><%= result[i].fact_name %></td>
+                        <td><%= result[i].fact_brief %></td>
+                        <td><%= result[i].fact_logo %></td>
+                        <td><%= result[i].fact_description %></td>
+
+                        <td>
+                            <a href="/editfacts?fact_id=<%= result[i].fact_id %>" style="color: white;">Edit</a>
+                            <a href="/deletefacts?fact_id=<%= result[i].fact_id %>" style="color: white;">Delete</a>
+                            
+                        </td>
+                    </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+</html>

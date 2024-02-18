@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+
+        </ul>
+    </div><br>
+
+    <div style="width:auto;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));color:white;">
+        <table align="center" border="1" cellspacing="5" style="font-family: arial;padding: 35px;">
+            <tr>
+                <td>Id</td>
+                <td>First name</td>
+                <td>Last name</td>
+                <td>Email</td>
+                <td>Phone Number</td>
+                <td>What do you have in our mind</td>
+                <td>Action</td>
+            </tr>
+
+            
+                <% for(var i = 0; i < result.length; i++) { %>
+                    <tr>
+                        <td><%= result[i].id %></td>
+                        <td><%= result[i].first_name %></td>
+                        <td><%= result[i].last_name %></td>
+                        <td><%= result[i].email %></td>
+                        <td><%= result[i].phone %></td>
+                        <td><%= result[i].doubt %></td>
+                        <td><a href="/deletecontact?id=<%= result[i].id %>" style="color: white;">Delete</a></td>
+
+                    </tr>
+
+
+            <% } %>
+
+
+        </table>
+    </div>
+</body>
+</html>

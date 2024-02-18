@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;padding: 0;">
+    <div style = "background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));display: flex;align-items: baseline;justify-content: space-between;">
+        
+        <ul style = "display: flex;justify-content: space-between;align-items: baseline;text-decoration: none;color: white;flex-direction: row;  list-style-type: none;">
+            <li style = "margin-right: 35px;"><a href="/" style = "text-decoration: none;;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Home</a></li>
+
+            <li style = "margin-right: 35px;"><a href="/listusers" style = "text-decoration: none;color: white;font-size: 17px;font-family: arial;font-weight: 700;">Users List</a></li>
+
+        </ul>
+    </div><br>
+    <form action="/addusers_submit" method="post">
+        <table style="width:500px;margin: 0 auto;background:linear-gradient(70deg, rgba(206, 120, 40, 0.932), rgba(22, 76, 201, 0.962));padding: 40px;color:white;font-family: arial;">
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" value="<%= result.email %>"></td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="password" value="<%= result.password %>"></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="first_name" value="<%= result.first_name %>"></td>
+            </tr>
+
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" name="last_name" value="<%= result.last_name %>"></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" pattern="\d{10}"  name="phone" value="<%= result.phone %>"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+
+            
+        </table>
+    </form>
+</body>
+</html>
