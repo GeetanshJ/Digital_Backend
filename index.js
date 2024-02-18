@@ -3,6 +3,8 @@ var app = express();
 const session = require("express-session");
 var bodyParser = require('body-parser');
 var db = require('./db');
+const mysql = require('mysql');
+
 const cors = require('cors');
 app.use(
     session({
