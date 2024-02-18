@@ -6,22 +6,15 @@ var db = require('./db');
 const mysql = require('mysql');
 
 const cors = require('cors');
-app.use(
-    session({
-        secret: "123qwe",
-        
-    })
-);
+app.use(session({
+    secret: "123qwe",
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.use(cors());
 app.use(express.json())
-db.connect(function (err) {
-    if (err) {
-        console.error('Error connecting to database:', err);
-        return;
-    }
 
-    console.log('Connected to database');
-});
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
