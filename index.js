@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 const session = require("express-session");
 var bodyParser = require('body-parser');
-var db = require('./db_teams');
+var db = require('./db');
 const cors = require('cors');
 app.use(
     session({
